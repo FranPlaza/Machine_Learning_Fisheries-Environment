@@ -1,0 +1,328 @@
+---
+title: "**Aprendizaje automático en pesquerías y medio ambiente**"
+subtitle: "**Escuela de Verano de Ingeniería** <img src='images/umayor_logo.png' alt='Logo Universidad Mayor' style='height:130px; margin-left:10px; margin-right:400px;' align='right'> <br> Universidad Mayor <br> 6-10 enero 2025"
+lang: es
+title-slide-attributes:
+  data-background-color: "#212f4b"
+  data-background-image: images/fish2.gif
+  data-background-size: cover
+  data-background-opacity: "0.1"
+format: 
+  clean-revealjs:
+    self-contained: true
+    transition: slide
+    transition-speed: default
+    background-transition: slide
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: "Francisco Plaza Vega <img src='images/usach_logo.png' alt='Logo Universidad de Santiago' style='height:100px; margin-left:10px; margin-right:420px;' align='right'>"
+    email: francisco.plaza.v@usach.cl
+    affiliations: Universidad de Santiago
+toc: true
+toc-depth: 1
+toc-title: "Contenidos"
+bibliography: referencias.bib
+---
+
+# Presentaciones {background-color="#212f4b" background-image="images/fish.gif" background-size="cover" background-opacity=0.2}
+
+
+# Un "mar" de datos {background-color="#212f4b" background-image="images/fish.gif" background-size="cover" background-opacity=0.2}
+
+---
+
+![Crecimiento de la población global de internet ([*Data never sleeps v12* de DOMO](https://web-assets.domo.com/blog/wp-content/uploads/2024/12/Data-never-sleep-12.0.png))](images/internet_population_2024.png)
+
+---
+
+![En un minuto del día ([*Data never sleeps v12* de DOMO](https://web-assets.domo.com/blog/wp-content/uploads/2024/12/Data-never-sleep-12.0.png))](images/data_never_sleeps_2024.png)
+
+---
+
+![Imagen generada con *DAll-e*](images/sea_data.png)
+
+---
+
+## El enfoque 
+
+![](images/AI_DS.png)
+
+---
+
+El esquema de trabajo
+
+:::{.r-stack}
+
+:::{.fragment .fade-in-then-out}
+![*Knowledge Discovery in Databases*, KDD [@Fayyad1996]](images/Esquema_KDD.png)
+:::
+
+:::{.fragment .fade-in-then-out}
+![*CRoss Industry Standard Process for Data Mining*, CRISP-DM [@Wirth2000]](images/Esquema_CRISP.png){width=70%}
+:::
+
+:::{.fragment}
+![Enfoque transversal de Ciencia de Datos](images/esquema_DS.jpg)
+:::
+:::
+
+
+
+# El problema de los recursos pesqueros {background-color="#212f4b" background-image="images/fish.gif" background-size="cover" background-opacity=0.2}
+
+--- 
+
+¿Qué hay bajo la superficie?
+
+:::{.r-stack}
+:::{.fragment .fade-in-then-out}
+![](images/oceano_4.jpg){.absolute top=100 left=100 width="800" height="500"}
+:::
+
+:::{.fragment .fade-in-then-out}
+![](images/oceano_3.jpg){.absolute top=100 left=100 width="800" height="500"}
+:::
+
+:::{.fragment}
+![](images/ocean_zones.jpg){.absolute top=100 left=100 width="800" height="500"}
+:::
+:::
+
+---
+
+## La complejidad del sistema Ambiente-Recursos
+
+:::{.callout-tip appearance="minimal" title="El ambiente"}
+
+![Fuente: Propuesta Fondecyt de iniciación 2025](images/scheme_environment.png){width=65%}
+:::
+
+---
+
+:::{.callout-tip appearance="minimal" title="Las pesquerías"}
+
+![Fuente: Propuesta Fondecyt de iniciación 2025](images/scheme_fisheries.png)
+:::
+
+---
+
+:::{.callout-tip appearance="minimal" title="Enfoque de modelación"}
+
+![Fuente: Propuesta Fondecyt de iniciación 2025](images/scheme_integration.png)
+:::
+
+# Algunas aplicaciones {background-color="#212f4b" background-image="images/fish.gif" background-size="cover" background-opacity=0.2}
+
+---
+
+::: {.columns}
+::: {.column width="45%"}
+
+![Anchoveta (*Engraulis ringens*)](images/anchoveta.jpg)
+
+:::
+
+::: {.column width="45%"}
+![Sardina del Pacífico (*Sardinops sagax*)](images/sardina.jpg)
+
+:::
+
+:::
+---
+
+![Peces pelágicos agrupados en cardúmenes](images/school.jpg)
+
+---
+
+![Ecosistemas marinos globales. Fuente: Global Environment Facility (GEF)](images/large_marine.jpg)
+
+---
+
+### Marco conceptual
+
+![Marco conceptual para las pesquerías de anchoveta y sardina en el norte de Chile [@yanez2008coupling]](images/conceptual_model.png)
+
+---
+
+### Pesquerías y ambiente
+
+::: {.callout-tip appearance="minimal"}
+- Productividad del sistema de corrientes Chile-Perú.
+- Sucesión histórica entre pesquerías pelágicas (anchovetas y sardinas).
+- Cambios de régimen frío-cálido en escalas temporales y espaciales.
+- Enfoque ecosistémico para la gestión pesquera.
+:::
+
+![Desembarques anuales de anchoveta y sardina en el norte de Chile](images/figure_1_annual.png)
+
+---
+
+### Área de estudio
+
+![Área de estudio y distribución de viajes de pesca de anchoveta y sardina de 2000 a 2021 (Norte de Chile). A la izquierda, la pesquería de anchoveta (en azul); en el centro, la pesquería de sardina (en rojo); a la derecha, el Sistema de Corriente de Humboldt.](images/app2_figure_distribution.png)
+
+---
+
+### Datos 
+
+::: {.columns}
+::: {.column width="45%"}
+![Desembarques mensuales de anchoveta y sardina de 1963 a 2021. En azul, promedio móvil de 12 meses para cada variable.](images/app2_figure_1.png)
+
+:::
+
+::: {.column width="45%"}
+![Variables ambientales mensuales: *SST*, *TI*, *PDO*, $N_{34}$ y *SOI*, registradas de 1963 a 2021. En azul, promedio móvil de 12 meses para cada variable.](images/app2_figure_2.png)
+:::
+:::
+
+---
+
+## Enfoque de ciencia de datos
+
+:::{.columns}
+:::{.column}
+![](images/methods_identifying.png)
+:::
+
+:::{.column}
+![](images/identifying_clusters.png)
+:::
+
+:::
+
+:::{.tiny}
+[@Plaza2018]
+:::
+---
+
+## Enfoque de modelación usando Redes Neuronales
+
+:::{.r-stack}
+
+:::{.fragment .fade-in-then-out}
+:::{.columns}
+:::{.column width="60%"}
+![](images/EsquemaDNN.png)
+:::
+
+:::{.column width="40%"}
+![](images/Neuron.png)
+:::
+:::
+:::
+
+:::{.fragment .fade-in-then-out}
+![](images/ML_pelagics.png)
+:::
+:::
+
+:::{.tiny}
+[@Yanez2010; @Naranjo2015; @Yanez2016; @Yanez2017]
+:::
+---
+
+## Enfoque GARCH con variables exógenas 
+
+:::{.r-stack}
+
+:::{.fragment .fade-in-then-out}
+:::{.callout-tip appearance="minimal" title="Modelo GARCH"}
+Sea $X_t$ la serie temporal de interés, el modelo GARCH-X se puede escribir de la siguiente manera:
+
+$$ \begin{aligned}
+X_t &= \sigma_t \varepsilon_t \\
+\sigma_t^2 &= \omega + \alpha X_{t-1}^2 + \beta \sigma_{t-1}^2 + \delta Z_{t-1}^2 \quad \forall t \in \mathbb{Z},
+\end{aligned}$$
+
+- $Z_t$ es la variable exógena observable.
+- $\omega > 0, \alpha, \beta, \delta \geq 0$.
+- $\varepsilon$ es independiente e idénticamente distribuida (i.i.d.) con media cero y varianza unitaria, $\varepsilon$ es independiente de $Z$.
+:::
+:::
+
+:::{.fragment .fade-in-then-out}
+:::{.callout-note appearance="minimal" title="Algoritmo ABC"}
+El método ABC utiliza el muestreo de rechazo para obtener muestras de la distribución posterior $\pi(\theta \mid X_\text{obs})$ sin calcular ninguna verosimilitud. Las parejas parámetro-datos $(\theta^*, X^*)$ se obtienen de la distribución a priori $\pi(\theta)$ y el modelo $M$, como se muestra en el algoritmo:
+
+1. Para $i = 1, \dots, n$ hacer:
+   - Repetir:
+     - Muestrear $\theta^*$ de la distribución a priori $\pi(\theta^*)$.
+     - Generar $X^*$ a partir del modelo $M$ dado $\theta^*$.
+   - Hasta que: $\| S(X^*) - S(X_\text{obs}) \| < \epsilon$
+     donde $S$ es la estadística resumen.
+   - Aceptar $\theta^*$ y guardar la muestra $\theta^{(i)} = \theta^*$.
+2. Fin.
+
+:::
+:::
+
+:::{.fragment .fade-in-then-out}
+:::{.callout-note appearance="minimal" title="CNN como $S(X)$"}
+![](images/figure_CNN_scheme.png){width=70%}
+:::
+:::
+
+:::{.fragment .fade-in-then-out}
+:::{.callout-note appearance="minimal" title="Algoritmo Híbrido ABC-DL"}
+:::{.small}
+1. Para $i = 1, \dots, N$ haz:
+    - Proponer $\theta^* = (\omega^*, \alpha^*, \beta^*, \delta^*)^{(i)}$ desde la prior $U(0, 1)$ con la condición $\alpha^* + \beta^* < 1$ y $3\alpha^{*2} + 2\alpha^*\beta^* + \beta^{*2} < 1$;
+    - Generar una realización de $X_t^{(i)}$ usando $(\theta^*)^{(i)}$.
+    - Fin.
+
+2. Estimar los parámetros de la estadística resumen ($S(\cdot)$) entrenando la CNN con la base de datos generada en el Paso 1 $\{ X^{(i)} \}_{1 \leq i \leq N}$ como entradas, y $\{ (\theta^*)^{(i)} \}_{1 \leq i \leq N}$ como salidas del modelo CNN.
+
+3. Extraer un subconjunto suficientemente grande ($n \geq 0.3 \cdot N$) que no fue usado en el proceso de entrenamiento.
+
+4. Para $i = 1, \dots, N$ haz:
+    - Repetir:
+        - Muestrear $\theta^*$ desde la prior $\pi(\theta^*)$;
+        - Generar $X^*$ desde el modelo $M$ dado $\theta^*$;
+    - Hasta que $\| S(X^*) - S(X_\text{obs}) \| < \epsilon$, donde $S$ es la estadística resumen basada en la CNN;
+    - Aceptar $\theta^*$ y guardar la muestra $\theta^{(i)} = \theta^*$.
+    - Fin.
+
+5. Hacer $\theta^* = \hat{\theta} = (\hat{\omega}, \hat{\alpha}, \hat{\beta}, \hat{\delta})$.
+
+6. Evaluar los resultados observados y estimados utilizando las medidas de desempeño habituales.
+:::
+:::
+:::
+
+:::{.fragment .fade-in-then-out}
+:::{.callout-tip appearance="minimal" title="Resultados"}
+
+::: {.columns}
+::: {.column width="45%"}
+![Predicción de un paso para el GARCH-X que considera $A_r$ como variable dependiente y comparación con un modelo GARCH(1,1).](images/app2_figure_7.png)
+
+:::
+
+::: {.column width="45%"}
+![Predicción de un paso para el GARCH-X que considera $S_r$ como variable dependiente y comparación con un modelo GARCH(1,1).](images/app2_figure_8.png)
+
+:::
+:::
+:::
+:::
+
+:::
+
+:::{.tiny}
+[@Plaza2023; @PlazaVega2024]
+:::
+
+# Muchas gracias! {.unlisted background-color="#212f4b"}
+
+![](images/the_end2.gif){fig-align="center"}
+
+francisco.plaza.v@usach.cl
+
+# Referencias {background-color="#212f4b"}
+
+::: {#referencias}
+:::
+
